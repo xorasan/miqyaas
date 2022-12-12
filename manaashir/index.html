@@ -1,0 +1,1331 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<meta name=viewport content=width=device-width,user-scalable=no,initial-scale=1>
+		<meta id=themecolor name=theme-color content=transparent>
+		<meta name=background-color content=transparent>
+		<link rel=manifest href=/manifest.json>
+		<style>
+:hover, :focus, :active {
+	outline:none;
+}
+	
+::-moz-focus-inner {
+	border:0;
+}
+	
+* {
+	box-sizing:border-box;
+}
+	
+small, big {
+	font-weight:normal;
+}
+	
+small, .small {
+	font-size:80%;
+}
+	
+.medium {
+	font-size:120%;
+}
+	
+big, .big {
+	font-size:160%;
+}
+	
+html, body {
+	font-size:100%;
+	padding:0 0 20px 0;
+	margin:0;
+	overscroll-behavior:none;
+	width:100%;
+}
+	
+body[data-transparency] {
+	background-attachment:fixed !important;
+}
+	
+html, body, svg text {
+	font-family:sans-serif;
+}
+	
+img {
+	border:none;
+}
+	
+ul {
+	padding:0px;
+	margin:0px;
+	text-decoration:none;
+}
+	
+li {
+	margin-bottom:5px;
+}
+	
+ul li {
+	list-style:none;
+	vertical-align:middle;
+}
+	
+hr {
+	border:0;
+	margin:2px 0;
+}
+	
+p, h1, h2, h3, h4, h5, h6 {
+	margin:4px 0;
+}
+	
+p {
+	padding:0 3px;
+}
+	
+[hidden] {
+	display:none !important;
+}
+	
+a {
+	vertical-align:middle;
+}
+	
+button {
+	display:inline-block;
+	color:inherit;
+	font-family:inherit;
+	font-size:inherit;
+	user-select:none;
+	vertical-align:middle;
+}
+	
+button:disabled {
+	opacity:0.5;
+}
+	
+button svg {
+	pointer-events:none;
+	vertical-align:middle;
+}
+	
+label {
+	font-size:90%;
+	font-weight:bold;
+	padding:0 2px;
+}
+	
+input, textarea, select {
+	background-color:transparent;
+	border:0;
+	border-radius:0;
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:inherit;
+	width:100%;
+	margin:0;
+	padding:1px 2px;
+	display:block;
+	resize:none;
+}
+	
+select {
+	display:inline-block;
+	min-width:120px;
+	width:inherit;
+	min-height:40px;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	border-radius:3px;
+	padding:0 10px;
+}
+	
+select, select:focus {
+	background-position:calc(100% - 10px) calc(1em + 2px), calc(100% - 5px) calc(1em + 2px);
+	background-size:5px 5px, 5px 5px, 1px;
+	background-repeat:no-repeat;
+}
+	
+[dir=rtl] select {
+	background-position:calc(5px) calc(1em + 2px), calc(10px) calc(1em + 2px);
+	padding:0 10px 0 0;
+}
+	
+#icons {
+	display:none;
+}
+	
+.tahweem {
+	display:none;
+	z-index:99999;
+	pointer-events:none;
+}
+	
+[data-tahweem] .tahweem {
+	display:inline-block;
+}
+	
+#eqonahui {
+	display:none;
+	width:76px;
+	height:76px;
+	border:0;
+}
+	
+#loadingbox {
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+	background:#000;
+	color:#fff;
+	z-index:99999;
+}
+	
+.above {
+	z-index:100;
+}
+	
+#headerui[data-align="1"] {
+	text-align:center;
+}
+	
+#headerui[data-align="2"] {
+	text-align:end;
+}
+	
+#eqonaat {
+	height:0;
+	width:100%;
+}
+	
+#statusbarshadow {
+	z-index:999999;
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	height:60px;
+	pointer-events:none;
+	background:linear-gradient(#000 -40%, transparent);
+}
+	
+#statusbarpadding {
+	height:25px;
+}
+	
+.fixed {
+	position:fixed;
+}
+	
+.absolute {
+	position:absolute;
+}
+	
+.relative {
+	position:relative;
+}
+	
+.sticky {
+	position:sticky;
+}
+	
+.top {
+	top:0;
+}
+	
+.right {
+	right:0;
+}
+	
+.left {
+	left:0;
+}
+	
+.bottom {
+	bottom:0;
+}
+	
+.justifycenter {
+	justify-content:center;
+}
+	
+.vcenter {
+	vertical-align:middle;
+	align-self:center;
+}
+	
+.vcenterkids {
+	align-items:center;
+}
+	
+.upper {
+	text-transform:uppercase;
+}
+	
+.spaces {
+	white-space:pre;
+}
+	
+.ellipsis {
+	text-overflow:ellipsis;
+	white-space:pre;
+	overflow:hidden;
+}
+	
+.allcaps {
+	text-transform:capitalize;
+}
+	
+.lower {
+	text-transform:lowercase;
+}
+	
+.monospace {
+	font-family:monospace;
+}
+	
+.centertext {
+	text-align:center;
+}
+	
+.start {
+	text-align:start;
+	align-self:flex-start;
+}
+	
+.end {
+	text-align:end;
+	align-self:end;
+}
+	
+.vend {
+	align-self:flex-end;
+}
+	
+.noselect {
+	user-select:none;
+}
+	
+.inlineonly {
+	display:inline;
+}
+	
+.inline {
+	display:inline-block;
+	vertical-align:middle;
+}
+	
+.narrowline {
+	line-height:1;
+}
+	
+.narrowletters {
+	letter-spacing:-1px;
+}
+	
+.narrowerletters {
+	letter-spacing:-1.5px;
+}
+	
+.bold {
+	font-weight:bold;
+}
+	
+.pad, .form {
+	padding-left:5px;
+	padding-right:5px;
+}
+	
+.padv {
+	padding-top:5px;
+	padding-bottom:5px;
+}
+	
+.padt {
+	padding-top:5px;
+}
+	
+.padb {
+	padding-bottom:5px;
+}
+	
+.gap {
+	margin-left:5px;
+	margin-right:5px;
+}
+	
+.gapv {
+	margin-top:5px;
+	margin-bottom:5px;
+}
+	
+.gapt {
+	margin-top:5px;
+}
+	
+.gapb {
+	margin-bottom:5px;
+}
+	
+.tag {
+	border-radius:5px;
+}
+	
+.r90 {
+	transform:rotate(90deg);
+}
+	
+.r180 {
+	transform:rotate(180deg);
+}
+	
+.r270 {
+	transform:rotate(270deg);
+}
+	
+.grid {
+	display:grid;
+	grid-template-columns:repeat(3, 1fr);
+}
+	
+.grid.two {
+	grid-template-columns:repeat(2, 1fr);
+}
+	
+.flex {
+	display:flex;
+}
+	
+.inlineflex {
+	display:inline-flex;
+}
+	
+.flex.row, .inlineflex.row {
+	flex-direction:row;
+}
+	
+.flex .min, .flex .less, .flex .grow, .flex .more {
+	width:auto !important;
+}
+	
+.flex .min, .inlineflex .min {
+	flex-grow:0;
+}
+	
+.flex .less, .inlineflex .less {
+	flex-grow:1;
+}
+	
+.flex .grow, .inlineflex .grow {
+	flex-grow:2;
+}
+	
+.flex .more, .inlineflex .more {
+	flex-grow:3;
+}
+	
+.icon svg {
+	width:24px;
+	height:24px;
+	pointer-events:none;
+	vertical-align:middle;
+}
+	
+.small.icon svg, .small .icon svg {
+	width:12px;
+	height:12px;
+}
+	
+.flex .vertical, .inlineflex .vertical, .flex.vertical, .inlineflex.vertical {
+	flex-direction:column;
+}
+	
+.flex .center {
+	display:flex;
+}
+	
+.flex .inlineflex.center {
+	display:inline-flex;
+}
+	
+.flex .center, .inlineflex .center {
+	align-items:center;
+	margin:0 auto;
+}
+	
+.flex .mh25, .inlineflex .mh25 {
+	min-height:25vh;
+}
+	
+.flex .mh50, .inlineflex .mh50 {
+	min-height:50vh;
+}
+	
+.flex .mh75, .inlineflex .mh75 {
+	min-height:75vh;
+}
+	
+.flex .mh100, .inlineflex .mh100 {
+	min-height:100vh;
+}
+	
+.dim, .dimx {
+	opacity:0.7;
+}
+	
+.extradim, .extradimx {
+	opacity:0.5;
+}
+	
+[data-selected] .dimx, [data-selected] .extradimx {
+	opacity:1;
+}
+	
+button.xaas {
+	margin:6px auto;
+	display:block;
+	border-radius:14px;
+	padding:5px 30px;
+	font-weight:bold;
+	font-size:150%;
+	letter-spacing:-2px;
+	text-transform:uppercase;
+}
+	
+#dimmer {
+	display:flex;
+	right:0;
+	left:0;
+	top:0;
+	bottom:0;
+	align-items:center;
+}
+	
+#dimmertext {
+	text-align:center;
+	max-width:80%;
+	margin:0 auto;
+	font-size:180%;
+	padding:5px 15px;
+	letter-spacing:-1px;
+	border-radius:5px;
+}
+	
+@keyframes fadein {
+	0% {
+		transform:scale(0.9);
+		opacity:0;
+	}
+	100% {
+		transform:scale(1);
+		opacity:1;
+	}
+}
+	
+[data-largetext] {
+	font-size:120%;
+}
+	
+[data-largetext] button svg {
+	width:26px;
+	height:26px;
+}
+	
+.form button {
+	display:block;
+	margin:0 auto;
+}
+	
+button svg {
+	width:22px;
+	height:22px;
+}
+	
+.header {
+	padding:5px;
+	font-weight:bold;
+	letter-spacing:-1px;
+	font-size:125%;
+	z-index:75;
+}
+	
+input, textarea {
+	font-size:125%;
+}
+	
+input.bare {
+	font-size:150%;
+	border-bottom-width:1px;
+}
+	
+#itlaa3, #taht3nsar {
+	z-index:3000;
+	overflow:visible;
+}
+	
+#itlaa3 {
+	top:70px;
+	left:30px;
+}
+	
+#itlaa3 .text {
+	max-width:160px;
+	padding:10px 15px;
+	border-radius:20px;
+	font-weight:bold;
+}
+	
+#taht3nsar .text {
+	padding:5px;
+	border-radius:5px;
+}
+	
+#itlaa3 .text, #taht3nsar .text {
+	text-align:center;
+}
+	
+.list {
+	user-select:none;
+}
+	
+.list .message {
+	display:flex;
+	align-items:center;
+	min-height:50vh;
+}
+	
+.list .message span {
+	font-size:150%;
+	text-align:center;
+	width:100%;
+}
+	
+[data-freeflow].list .item, [data-freeflow].list .listitem {
+	display:inline-block;
+}
+	
+[data-freeflow].list .item.inlineflex, [data-freeflow].list .listitem.inlineflex {
+	display:inline-flex;
+}
+	
+[data-grid].list .items {
+	display:grid;
+	grid-template-columns:repeat(2, 1fr);
+}
+	
+[data-grid="3"].list .items {
+	grid-template-columns:repeat(3, 1fr);
+}
+	
+[data-grid="4"].list .items {
+	grid-template-columns:repeat(4, 1fr);
+}
+	
+[data-grid="5"].list .items {
+	grid-template-columns:repeat(5, 1fr);
+}
+	
+.list .item {
+	padding:0 6px;
+	cursor:pointer;
+}
+	
+.list .item, .list .listitem {
+	position:relative;
+}
+	
+[data-transparency] .list .item, [data-transparency] .list .listitem {
+	border-bottom:1px solid transparent;
+}
+	
+.list .item[data-baidaa] .baidaa, .list .listitem[data-baidaa] .baidaa {
+	opacity:0;
+	user-select:none;
+}
+	
+.list .item[data-baidaa], .list .listitem[data-baidaa] {
+	font-weight:bold;
+}
+	
+.list .item .title {
+	font-size:125%;
+	white-space:nowrap;
+	letter-spacing:-1px;
+}
+	
+.list .item[data-selected] .body {
+	font-size:125%;
+	line-height:1.1;
+}
+	
+[data-grid][data-hidetext].list .items .text {
+	display:none;
+}
+	
+.list img {
+	height:48px;
+	width:auto;
+}
+	
+.small .list img {
+	height:24px;
+}
+	
+[data-largetext] .small .list img {
+	height:36px;
+}
+	
+[data-grid="2"].list .items img {
+	height:54px;
+}
+	
+[data-grid="3"].list .items img {
+	height:50px;
+}
+	
+[data-grid="4"].list .items img {
+	height:48px;
+}
+	
+[data-grid="5"].list .items img {
+	height:40px;
+}
+	
+.list .item .icon {
+	position:absolute;
+	top:3px;
+	right:3px;
+	bottom:0;
+	padding-left:40px;
+}
+	
+.list .item[data-selected] .days {
+	font-weight:bold;
+}
+	
+[data-past] {
+	font-weight:bold;
+}
+	
+.list .hide, .list .ixtaf {
+	display:none;
+}
+	
+[data-rakkaz].list [data-selected] .hide, [data-rakkaz].list [data-selected] .ixtaf {
+	display:block;
+}
+	
+[data-rakkaz].list [data-selected] .inline.hide, [data-rakkaz].list [data-selected] .inline.ixtaf {
+	display:inline-block;
+}
+	
+[data-rakkaz].list [data-selected] .flex.hide, [data-rakkaz].list [data-selected] .flex.ixtaf {
+	display:flex;
+}
+	
+[data-rakkaz].list [data-selected] .inlineflex.hide, [data-rakkaz].list [data-selected] .inlineflex.ixtaf {
+	display:inline-flex;
+}
+	
+.list [data-mufarraq] {
+	position:sticky;
+	z-index:100;
+	grid-column-start:1;
+	height:35px;
+	white-space:nowrap;
+	overflow:hidden;
+}
+	
+.list [data-mufarraq="1"] {
+	top:0;
+}
+	
+.list [data-mufarraq="2"] {
+	top:35px;
+}
+	
+[data-pager="1"] .list [data-mufarraq="1"] {
+	top:40px;
+}
+	
+[data-pager="1"] .list [data-mufarraq="2"] {
+	top:75px;
+}
+	
+[data-pager="2"] .list [data-mufarraq="1"] {
+	top:53px;
+}
+	
+[data-pager="2"] .list [data-mufarraq="2"] {
+	top:88px;
+}
+	
+[data-grid="2"].list [data-mufarraq] {
+	grid-column-end:3;
+}
+	
+[data-grid="3"].list [data-mufarraq] {
+	grid-column-end:4;
+}
+	
+[data-grid="4"].list [data-mufarraq] {
+	grid-column-end:5;
+}
+	
+[data-grid="5"].list [data-mufarraq] {
+	grid-column-end:6;
+}
+	
+.list .item .tawassa3, .list .listitem .tawassa3 {
+	position:absolute;
+	overflow:visible;
+	bottom:100%;
+	margin-left:10px;
+	right:12px;
+	z-index:200;
+	border-radius:5px;
+	pointer-events:none;
+	transition:opacity .2s ease-in;
+}
+	
+#softkeysui {
+	position:fixed;
+	bottom:0;
+	right:0;
+	left:0;
+	z-index:1000;
+	padding:0 1px 1px 1px;
+}
+	
+#softkeysui[data-hidden] {
+	opacity:0.85;
+}
+	
+#skhelp {
+	margin-bottom:5px;
+	font-size:125%;
+}
+	
+#softkeysui button {
+	line-height:1;
+	letter-spacing:-1px;
+	border-radius:4px;
+	border:0;
+	height:26px;
+	overflow:hidden;
+}
+	
+#softkeysui button span {
+	vertical-align:middle;
+	font-size:110%;
+}
+	
+#softkeysui button.star span {
+	font-size:150%;
+}
+	
+#softkeysui button.hash span {
+	font-size:125%;
+}
+	
+#softkeysui button .icon {
+	display:inline-block;
+}
+	
+#softkeysui button svg {
+	height:25px;
+	width:25px;
+}
+	
+#softkeysui button label {
+	height:inherit;
+	margin:0 3px 0 0;
+	font-size:120%;
+	border-radius:5px;
+	padding:0 5px;
+}
+	
+#softkeysui .row1 {
+	min-height:26px;
+}
+	
+#softkeysui .row1 button {
+	padding:0 5px;
+	display:block;
+}
+	
+#softkeysui .row2 button {
+	padding:0 5px 0 0;
+	margin-right:1px;
+	font-size:100%;
+	margin-bottom:0;
+}
+	
+#softkeysui .left, #softkeysui .right {
+	position:absolute;
+	bottom:0;
+	font-size:110%;
+}
+	
+#softkeysui .left {
+	border-radius:0 8px 0 0;
+	text-align:left;
+	left:0;
+	text-align:end;
+}
+	
+#softkeysui .center {
+	border-radius:8px 8px 0 0;
+	font-size:120%;
+	text-align:center;
+	margin:0 auto;
+}
+	
+#softkeysui .right {
+	border-radius:8px 0 0 0;
+	text-align:right;
+	right:0;
+	text-align:start;
+}
+	
+#sheetui {
+	position:fixed;
+	bottom:0;
+	right:0;
+	left:0;
+	max-height:100vh;
+	overflow-x:auto;
+	z-index:500;
+	border-radius:10px 10px 0 0;
+}
+	
+#sheetui .header {
+	position:sticky;
+	left:0;
+	right:0;
+	top:0;
+	z-index:200;
+}
+	
+#sheetui .container {
+	padding:0 0 30px 0;
+}
+	
+#sheetui [data-bardaa].container {
+	opacity:.4;
+	pointer-events:none;
+	user-select:none;
+}
+	
+#sheetui [data-visiblesheet] {
+	padding-bottom:48px;
+}
+	
+#sheetui [data-visiblesheet] .heading {
+	font-size:125%;
+	font-weight:bold;
+	margin-bottom:5px;
+}
+	
+@media (min-width:640px) {
+	#sheetui {
+		max-width:640px;
+		margin:0 auto !important;
+	}
+}
+	
+#dialogui {
+	position:fixed;
+	bottom:0;
+	right:0;
+	left:0;
+	max-height:80vh;
+	overflow-x:auto;
+	z-index:700;
+	padding:6px 6px 48px 6px;
+}
+	
+@media (min-width:640px) {
+	#dialogui {
+		max-width:640px;
+		margin:0 auto !important;
+	}
+}
+	
+@media (min-width:321px) {
+	#softkeysui button {
+		line-height:1;
+		letter-spacing:-1px;
+		border-radius:0;
+		border:0;
+		overflow:hidden;
+		min-height:34px;
+	}
+	#softkeysui .row1 button {
+		height:64px;
+		background:transparent !important;
+	}
+	#softkeysui button:active, #softkeysui button[data-lamsah] {
+	}
+	#softkeysui button svg {
+		height:34px;
+		width:34px;
+	}
+	#softkeysui .row2, #skdots {
+		display:flex;
+		flex-direction:column-reverse;
+		position:fixed;
+		bottom:90px;
+		right:0;
+	}
+	#skdots {
+		display:none;
+		z-index:100;
+		min-height:120px;
+		min-width:32px;
+		border-right:0;
+		border-radius:10px 0 0 10px;
+	}
+}
+	
+#softkeysui[data-hidden] #skdots {
+	display:flex;
+	right:-2px;
+}
+	
+#softkeysui[data-hidden] .row2 {
+	display:none;
+}
+	
+[data-align=left] #softkeysui .row1 {
+	flex-direction:row;
+}
+	
+[data-align=left] #softkeysui .row1, [data-align=left] #softkeysui .row2 {
+	right:initial;
+	left:0;
+}
+	
+@media (min-width:321px) {
+	#skdots {
+		display:none !important;
+	}
+	#softkeysui .row2 [data-hawm="1"] span {
+		position:absolute;
+		top:6px;
+		right:95px;
+		padding:2px;
+		border-radius:6px;
+	}
+	#skhelp {
+		display:none;
+	}
+	#softkeysui .row2 {
+		display:flex !important;
+		border-right:0;
+		border-radius:10px 0 0 10px;
+	}
+	#softkeysui .row2 button {
+		padding:0 4px;
+		position:relative;
+		overflow:visible;
+	}
+	#softkeysui .row2 [data-hawm="1"] .icon {
+		right:45px;
+		position:relative;
+	}
+	#softkeysui[data-hidden] .row2 {
+		right:-16px;
+		border-color:transparent;
+	}
+}
+	
+html, body, svg text {
+	font-family:Segoe UI, Noto Naskh Arabic UI, sans-serif;
+}
+	
+@media (min-width:640px) {
+	body {
+		max-width:640px;
+		margin:0 auto !important;
+	}
+	::-webkit-scrollbar {
+		width:8px;
+		height:8px;
+	}
+	::-webkit-scrollbar-thumb {
+	}
+	::-webkit-scrollbar-thumb:active {
+	}
+}
+	
+@media (min-width:800px) {
+	#itlaa3 .text {
+		font-size:150%;
+	}
+	#dialogui {
+		font-size:150%;
+		padding-bottom:140px;
+	}
+	#skdots {
+		display:none !important;
+	}
+	#softkeysui .row2 {
+		display:flex !important;
+	}
+	#softkeysui .row2 button {
+		height:54px;
+	}
+	#softkeysui .row2 button svg {
+		height:48px;
+		width:48px;
+	}
+	#softkeysui button span {
+		margin-left:8px;
+	}
+	#softkeysui .row2, #skdots {
+		margin-bottom:80px;
+	}
+}
+	
+@media (min-width:1024px) {
+	#eqonahui {
+		display:inline-block;
+	}
+	body {
+		max-width:600px;
+		margin:0 90px 0 auto !important;
+	}
+	#pagermowjoodah {
+		max-width:600px;
+	}
+	[data-fullscreen] {
+		position:fixed;
+		top:0;
+		left:0;
+		width:calc(100vw - 700px) !important;
+		bottom:0;
+		overflow:auto;
+	}
+	#skenter {
+		width:96px;
+	}
+	#softkeysui .row1 button {
+		height:96px;
+	}
+	#softkeysui .row1 button svg {
+		height:48px;
+		width:48px;
+	}
+}
+	
+.haalah {
+	z-index:50;
+	top:20px;
+	font-size:300%;
+}
+	
+.fakepad {
+	padding-bottom:220px;
+}
+</style>
+
+		</head>
+	
+	<body>
+		<div id=statusbarpadding></div>
+		
+		<div id=statusbarshadow></div>
+		
+		<div class="tahweem absolute top bottom left right noselect"></div>
+		
+		<div id=tafawwaq class=sticky></div>
+		
+		<div id=loadingbox class="fixed flex big bold">
+			<div class=center>
+				<div data-i18n=loading></div>
+				</div>
+			</div>
+		
+		<div id=dimmer class=fixed hidden>
+			<div id=dimmertext></div>
+			</div>
+		
+		<img id=eqonahui class="fixed top right" src=e.png>
+		<div id=headerui class="header relative" hidden data-dir=1></div>
+		
+		<div id=itlaa3 class="fixed flex" hidden>
+			<div class=text></div>
+			</div>
+		
+		<div id=taht3nsar class="fixed flex" hidden>
+			<div class=text></div>
+			</div>
+		
+		<button class="checkbox flex row" data-template=checkbox>
+			<div class=center>
+				<div class=icon data-id=icon></div>
+				
+				<label data-id=label></label>
+				</div>
+			</button>
+		
+		<div id=listui>
+			<div class=list data-template=list>
+				<div class="a3laa flex vertical vcenter pad padv gapb bold small centertext" data-id=raees>
+					<div class="mowdoo3list grow" data-id=mowdoo3list></div>
+					
+					<div class=miqyaas hidden data-id=miqyaas></div>
+					</div>
+				
+				<div class=message hidden>
+					<span data-id=message></span>
+					</div>
+				
+				<div class=items data-id=items></div>
+				</div>
+			
+			<div class=item data-template=listitem>
+				<div class=flex>
+					<img hidden data-id=image>
+					<div class="grow text">
+						<div class=title data-id=title data-dir></div>
+						
+						<div class=title data-id=titlei18n data-dir></div>
+						
+						<div class="title hide" data-id=titlehide data-dir></div>
+						
+						<div class=title data-id=titlehtml data-dir></div>
+						
+						<div class=title data-id=titledays data-dir data-by=age></div>
+						
+						<div class=title data-id=titletime data-dir data-by=time></div>
+						
+						<div class=title data-id=titlehours data-dir data-by=hourly></div>
+						
+						<div class="subtitle hide" data-id=subtitle data-dir></div>
+						
+						<div class="body hide" data-id=body data-dir></div>
+						
+						<div class="body hide" data-id=bodyi18n data-dir></div>
+						
+						<div class="body hide" data-id=bodyhtml data-dir></div>
+						
+						<div class=body data-id=bodyshowhtml data-dir></div>
+						
+						<div class=body data-id=bodyshow data-dir></div>
+						
+						<div class=days data-id=days data-by=age></div>
+						
+						<div class="time hide" data-id=time></div>
+						
+						<div class=time data-id=timeshow></div>
+						</div>
+					
+					<div class=icon hidden data-id=icon></div>
+					
+					<div class="min center">
+						<div class="uid hide" data-id=uid></div>
+						</div>
+					</div>
+				</div>
+			
+			<div class=sep data-template=listsep></div>
+			</div>
+		
+		<div data-view=settings>
+			<div class=pad>
+				<div class=flex>
+					<div class=grow>
+						<b data-i18n=build></b>
+						
+						<div> 162</div>
+						</div>
+					
+					<div class=grow>
+						<b data-i18n=builton></b>
+						
+						<div> mudeer</div>
+						</div>
+					</div>
+				</div>
+			
+			<hr>
+			<div data-id=list></div>
+			
+			<hr>
+			<div data-id=ad></div>
+			</div>
+		
+		<div id=softkeysui dir=ltr>
+			<div id=skhelp data-i18n=skhelp></div>
+			
+			<div id=skhints class=row2></div>
+			
+			<div id=skdots>
+				<div class="center pad padv dim">#</div>
+				
+				<div class="center icon" data-icon=iconmorevert></div>
+				</div>
+			
+			<div id=skmain class=row1></div>
+			
+			<button data-template=skbutton>
+				<div class=icon data-id=icon></div>
+				
+				<label hidden data-id=name></label>
+				
+				<span hidden data-id=label></span>
+				</button>
+			</div>
+		
+		<div id=sheetui class=sheet hidden data-view=sheet>
+			<div class="header centertext" data-id=header data-dir=1></div>
+			
+			<div class=container data-id=container></div>
+			</div>
+		
+		<style id=dynamicstyle></style>
+		
+		<div id=dialogui class=dialog data-view=dialog>
+			<div class=body data-id=message></div>
+			
+			<input hidden data-id=input></div>
+		
+		<audio id=beepa src=a.ogg></audio>
+		
+		<audio id=beepb src=b.ogg></audio>
+		
+		<div data-view=main>
+			<div class=fakepad></div>
+			
+			<div class="big bold centertext haalah fixed left right narrowline" data-id=haalah>
+				<div class=dim data-id=kul></div>
+				
+				<div class=big data-id=muddah></div>
+				
+				<div data-id=ism></div>
+				
+				<div data-id=qaadim></div>
+				</div>
+			
+			<div data-id=list></div>
+			
+			<div class=fakepad></div>
+			</div>
+		
+		<div class="flex pad padv listitem big" data-template=qadam>
+			<div class="bold start grow" data-id=ism></div>
+			
+			<div class="shrink end" data-id=muddah></div>
+			</div>
+		
+		<script src=a.js></script>
+		
+		
+<svg id="eqonaat"><symbol viewBox="0 0 48 48" id="iconadd"> <path d="M38 26H26v12h-4V26H10v-4h12V10h4v12h12v4z"/> <path d="M0 0h48v48H0z" fill="none"/> </symbol><symbol viewBox="0 0 48 48" id="iconarrowback"> <path d="M0 0h48v48H0z" fill="none"/> <path d="M40 22H15.66l11.17-11.17L24 8 8 24l16 16 2.83-2.83L15.66 26H40v-4z"/> </symbol><symbol viewBox="0 0 48 48" id="iconclose"> <path d="M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"/> <path d="M0 0h48v48H0z" fill="none"/> </symbol><symbol viewBox="0 0 48 48" id="icondone"> <path d="M0 0h48v48H0z" fill="none"/> <path d="M18 32.34L9.66 24l-2.83 2.83L18 38l24-24-2.83-2.83z"/> </symbol><symbol viewBox="0 0 48 48" id="iconedit"> <path d="M6 34.5V42h7.5l22.13-22.13-7.5-7.5L6 34.5zm35.41-20.41c.78-.78.78-2.05 0-2.83l-4.67-4.67c-.78-.78-2.05-.78-2.83 0l-3.66 3.66 7.5 7.5 3.66-3.66z"/> <path d="M0 0h48v48H0z" fill="none"/> </symbol><symbol viewBox="0 0 48 48" id="iconexposureneg1"> <path d="M0 0h48v48H0zm0 0h48v48H0z" fill="none"/> <path d="M8 22v4h16v-4H8zm30 14h-4V14.75l-6 2.05v-3.4l9.4-3.4h.6v26z"/> </symbol><symbol viewBox="0 0 48 48" id="iconexposureplus1"> <path d="M0 0h48v48H0zm0 0h48v48H0z" fill="none"/> <path d="M20 14h-4v8H8v4h8v8h4v-8h8v-4h-8v-8zm20 22h-4V14.75l-6 2.05v-3.4l9.4-3.4h.6v26z"/> </symbol><symbol viewBox="0 0 48 48" id="iconhelp"> <path d="M0 0h48v48H0z" fill="none"/> <path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm2 34h-4v-4h4v4zm4.13-15.49l-1.79 1.84C26.9 25.79 26 27 26 30h-4v-1c0-2.21.9-4.21 2.34-5.66l2.49-2.52C27.55 20.1 28 19.1 28 18c0-2.21-1.79-4-4-4s-4 1.79-4 4h-4c0-4.42 3.58-8 8-8s8 3.58 8 8c0 1.76-.71 3.35-1.87 4.51z"/> </symbol><symbol viewBox="0 0 48 48" id="iconkeyboardarrowdown"> <path d="M14.83 16.42L24 25.59l9.17-9.17L36 19.25l-12 12-12-12z"/> <path d="M0-.75h48v48H0z" fill="none"/> </symbol><symbol viewBox="0 0 48 48" id="iconkeyboardarrowup"> <path d="M14.83 30.83L24 21.66l9.17 9.17L36 28 24 16 12 28z"/> <path d="M0 0h48v48H0z" fill="none"/> </symbol><symbol viewBox="0 0 48 48" id="iconmorevert"> <path d="M0 0h48v48H0z" fill="none"/> <path d="M24 16c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 4c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 12c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/> </symbol><symbol viewBox="0 0 48 48" id="iconpause"> <path d="M12 38h8V10h-8v28zm16-28v28h8V10h-8z"/> <path d="M0 0h48v48H0z" fill="none"/> </symbol><symbol viewBox="0 0 48 48" id="iconplayarrow"> <path d="M-838-2232H562v3600H-838z" fill="none"/> <path d="M16 10v28l22-14z"/> <path d="M0 0h48v48H0z" fill="none"/> </symbol><symbol viewBox="0 0 48 48" id="iconsearch"> <path d="M31 28h-1.59l-.55-.55C30.82 25.18 32 22.23 32 19c0-7.18-5.82-13-13-13S6 11.82 6 19s5.82 13 13 13c3.23 0 6.18-1.18 8.45-3.13l.55.55V31l10 9.98L40.98 38 31 28zm-12 0c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9z"/> <path d="M0 0h48v48H0z" fill="none"/> </symbol><symbol viewBox="0 0 48 48" id="iconsettings"> <path d="M0 0h48v48H0z" fill="none"/> <path d="M38.86 25.95c.08-.64.14-1.29.14-1.95s-.06-1.31-.14-1.95l4.23-3.31c.38-.3.49-.84.24-1.28l-4-6.93c-.25-.43-.77-.61-1.22-.43l-4.98 2.01c-1.03-.79-2.16-1.46-3.38-1.97L29 4.84c-.09-.47-.5-.84-1-.84h-8c-.5 0-.91.37-.99.84l-.75 5.3c-1.22.51-2.35 1.17-3.38 1.97L9.9 10.1c-.45-.17-.97 0-1.22.43l-4 6.93c-.25.43-.14.97.24 1.28l4.22 3.31C9.06 22.69 9 23.34 9 24s.06 1.31.14 1.95l-4.22 3.31c-.38.3-.49.84-.24 1.28l4 6.93c.25.43.77.61 1.22.43l4.98-2.01c1.03.79 2.16 1.46 3.38 1.97l.75 5.3c.08.47.49.84.99.84h8c.5 0 .91-.37.99-.84l.75-5.3c1.22-.51 2.35-1.17 3.38-1.97l4.98 2.01c.45.17.97 0 1.22-.43l4-6.93c.25-.43.14-.97-.24-1.28l-4.22-3.31zM24 31c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/> </symbol><symbol viewBox="0 0 48 48" id="iconstop"> <path d="M0 0h48v48H0z" fill="none"/> <path d="M12 12h24v24H12z"/> </symbol><symbol viewBox="0 0 48 48" id="icontheme"> <path d="M0 0h48v48H0z" fill="none"/> <path d="M40 17.37V8h-9.37L24 1.37 17.37 8H8v9.37L1.37 24 8 30.63V40h9.37L24 46.63 30.63 40H40v-9.37L46.63 24 40 17.37zM24 36c-1.79 0-3.48-.4-5-1.1 4.13-1.9 7-6.06 7-10.9s-2.87-9-7-10.9c1.52-.7 3.21-1.1 5-1.1 6.63 0 12 5.37 12 12s-5.37 12-12 12z"/> </symbol></svg>
+
+
+		</body>
+	</html>

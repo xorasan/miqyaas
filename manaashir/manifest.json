@@ -1,0 +1,32 @@
+{
+	"version": "1.6.2",
+	"name": "miqyaas",
+	"subtitle": "",
+	"description": "",
+	"display": "standalone",
+	"fullscreen": "",
+	"cursor": "false",
+	"launch_path": "/index.html",
+	"developer": {
+		"name": "Hasan Xorasani",
+		"url": "mailto:hxorasani@gmail.com"
+	},
+	"locales": {
+		"en-US": {
+			"name": "miqyaas",
+			"subtitle": "",
+			"description": ""
+		}
+	},
+	"default_locale": "en-US",
+	"icons": [
+		{
+			"src": "/0.png",
+			"sizes": "56x56"
+		},
+		{
+			"src": "/1.png",
+			"sizes": "112x112"
+		}
+	]
+}

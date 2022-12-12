@@ -1,0 +1,75 @@
+nawaat
+	frontend
+masdar
+	hooks
+	reset
+	menu
+	profiles
+	webapp
+	softkeys
+	themes
+	sheet
+	preferences
+	translate
+	time
+	dialog
+	backstack
+	list
+	templates
+	headings
+	helpers
+	offline
+	shabakah
+	head
+	settings
+	activity
+	view
+	sawtkaatib
+name     miqyaas
+mutassil false
+eqonaat
+	search
+	settings
+	theme
+	edit
+	add
+	stop
+	pause
+	exposureneg1
+	exposureplus1
+	playarrow
+	help
+	done
+	close
+	arrowback
+	keyboardarrowup
+	keyboardarrowdown
+	morevert
+taraajim
+	en
+ishtamal
+	hooks
+	reset
+	reset.zaboon
+	webapp
+	webapp.3inch
+	list
+	backstack
+	preferences
+	activity
+	view
+	time
+	settings
+	translate
+	templates
+	softkeys
+	softkeys.list
+	sheet
+	themes
+	dialog
+	softkeys.touch
+	webapp.touch
+	webapp.13inch
+	sawtkaatib
+xudoo3
+sinf     zaboon
